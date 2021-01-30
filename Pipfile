@@ -7,6 +7,8 @@ name = "pypi"
 gunicorn = "*"
 psycopg2 = "*"
 flask = "*"
+flask-cors = "*"
+flask-login = "*"
 
 [dev-packages]
 
