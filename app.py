@@ -25,10 +25,10 @@ login_manager.init_app(app)
 CORS(app, supports_credentials=True)
 
 #db connection setup
-host = "localhost"
+host = os.environ.get("host")
 port = "5432"
-dbname = "postgres"
-user = "postgres"
+dbname = os.environ.get("dbname")
+user = os.environ.get("user")
 conn = psycopg2.connect(host = host, port = port, dbname = dbname, user = user, password = password)
 
 
