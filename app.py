@@ -22,7 +22,7 @@ login_manager = LoginManager()
 
 login_manager.init_app(app)
 
-CORS(app, supports_credentials=True)
+#CORS(app, supports_credentials=True)
 
 #db connection setup
 host = os.environ.get("host")
@@ -32,7 +32,7 @@ user = os.environ.get("user")
 conn = psycopg2.connect(host = host, port = port, dbname = dbname, user = user, password = password)
 
 
-#CORS(app)
+CORS(app)
 
 DATABASE = './database.db'
 
