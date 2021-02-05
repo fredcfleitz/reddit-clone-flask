@@ -19,8 +19,10 @@ app.secret_key = b'\x0e\xe2k:\xc0\xaa&%\x1c\xecrn\x11N\xaf\xe8'
 app.debug = True
 
 app.config.update(
-        SESSION_COOKIE_SAMESITE='Lax',
+        SESSION_COOKIE_SAMESITE='None',
+        SESSION_COOKIE_SECURE=True,
 )
+
 
 login_manager = LoginManager()
 
