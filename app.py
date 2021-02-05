@@ -21,6 +21,7 @@ app.debug = True
 app.config.update(
         SESSION_COOKIE_SAMESITE='None',
         SESSION_COOKIE_SECURE=True,
+        REMEMBER_COOKIE_SECURE=True,
 )
 
 
