@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo logging in to ECR ...
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 587553097424.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t reddit-flask .
+      - docker tag reddit-flask:latest 587553097424.dkr.ecr.us-east-1.amazonaws.com/reddit-flask:latest
+      - docker push 587553097424.dkr.ecr.us-east-1.amazonaws.com/reddit-flask:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
