@@ -87,6 +87,7 @@ def load_user(id):
 @app.route('/')
 def hello_world():
     cur = get_db().cursor()
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     print(cursor.execute("SELECT * FROM COMMENTS").fetchall())
     print(current_user)
     return {
