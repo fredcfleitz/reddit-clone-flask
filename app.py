@@ -8,7 +8,6 @@ from model import comment, User
 from counter import counter
 from flask_login import LoginManager, current_user, login_user, login_required, logout_user
 from flask_cors import CORS, cross_origin
-#from env import password
 import os
 
 password = os.environ.get("DBPASS")
