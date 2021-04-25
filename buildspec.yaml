@@ -16,7 +16,7 @@ phases:
       - docker push 587553097424.dkr.ecr.us-east-1.amazonaws.com/reddit-flask:latest
   post_build:
     commands:
-      - aws ecs update-service --cluster reddit2 --service backend --force-new-deployment
+      - aws ecs update-service --cluster reddit2 --service backend-balancer --force-new-deployment
       - echo Build completed on `date`
 artifacts:
   files:
