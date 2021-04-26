@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS posts (
         content VARCHAR,
         score INTEGER,
         subreddit VARCHAR,
-        userName VARCHAR NOT NULL
+        userName VARCHAR NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
 
 

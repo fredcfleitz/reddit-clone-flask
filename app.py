@@ -101,7 +101,7 @@ def all_comments():
         content = data["content"]
         user = current_user.userName
         score = 0
-        cursor.execute("INSERT INTO comments (id, parent, content, username, score) VALUES (nextval('count'),%s,%s,%s,%s)", (parent, content, user, score))
+        cursor.execute("INSERT INTO comments (id, parent, content, username, score) VALUES (%s,%s,%s,%s,%s)", (counter, parent, content, user, score))
         conn.commit()
         counter_up()
     cursor.execute("SELECT * FROM comments")
