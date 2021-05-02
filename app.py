@@ -118,7 +118,7 @@ def posts():
         user = data["user"]
         score = data["score"]
         subreddit = data["subreddit"]
-        cursor.execute("INSERT INTO posts (id, title, content, username, score, subreddit) VALUES (nextval('counter'),%s,%s,%s,%s,%s)", (counter, title, content, user, score, subreddit))
+        cursor.execute("INSERT INTO posts (id, title, content, username, score, subreddit) VALUES (nextval('counter'),%s,%s,%s,%s,%s)", (title, content, user, score, subreddit))
         conn.commit()
         counter_up()
     print(current_user)
